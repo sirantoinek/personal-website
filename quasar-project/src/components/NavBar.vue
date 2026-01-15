@@ -1,15 +1,31 @@
+<script setup lang="ts">
+  import { ref } from "vue";
+
+  const activeItem = ref("about");
+  const navbarItems = ["about", "experience", "projects", "contact"];
+
+  const toggleColor = (itemName: string) => {
+    activeItem.value = itemName;
+  };
+</script>
+
 <template>
   <nav class="navbar">
     <div class="navbar__items">
-      <a class="navbar__item">about</a>
-      <a class="navbar__item">experience</a>
-      <a class="navbar__item">projects</a>
-      <a class="navbar__item">contact</a>
+      <a 
+        v-for="item in navbarItems"
+        :key="item"
+        class="navbar__item"
+        :class="{ active: activeItem === item }"
+        @click="toggleColor(item)"
+      >
+        {{ item }}
+      </a>
     </div>
   </nav>
 </template>
 
-<style>
+<style lang="scss">
 	.navbar {
     display: flex;
     justify-content: left;
@@ -25,14 +41,35 @@
   }
 
   .navbar__items {
+    display: flex;
     padding: .25rem;
-    border: 1px solid #e5e5e5;
+    border: 1px solid $lm_border;
     border-radius: .5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    font-size: 1rem;
+    font-size: 1rem;    
   }
 
   .navbar__item {
+    color: $lm_dim;
     padding: .25rem .5rem;
+    border-radius: .25rem;
+    transition: background-color 150ms ease-out;
   }
+
+  .navbar__item.active {
+    color: revert;
+  }
+
+  .navbar__item {
+    color: $lm_dim;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    transition: background-color 150ms ease-out;
+  }
+
+  .navbar__item:hover {
+    background-color: $lm_border;
+    transition: background-color 0s;
+  }
+
 </style>
