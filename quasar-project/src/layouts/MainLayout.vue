@@ -1,10 +1,12 @@
 <script setup lang="ts">
   import NavBar from 'components/NavBar.vue';
+  import AboutMe from 'components/AboutMe.vue';
 </script>
 
 <template>
   <main class="main">
     <NavBar/>
+    <AboutMe/>
   </main>
 </template>
 
@@ -25,7 +27,7 @@
     }
   }
 
-@media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     .main {
       margin-left: 10%;
       margin-right: 10%;

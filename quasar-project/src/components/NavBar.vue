@@ -30,6 +30,7 @@
     display: flex;
     justify-content: left;
 		position: sticky;
+    z-index: 1;
   	top: 20px;
     left: 20px;
 	}
@@ -43,6 +44,8 @@
   .navbar__items {
     display: flex;
     padding: .25rem;
+    background-color: $lm_background;
+    backdrop-filter: blur(5px);
     border: 1px solid $lm_border;
     border-radius: .5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -58,13 +61,6 @@
 
   .navbar__item.active {
     color: revert;
-  }
-
-  .navbar__item {
-    color: $lm_dim;
-    padding: .25rem .5rem;
-    border-radius: .25rem;
-    transition: background-color 150ms ease-out;
   }
 
   .navbar__item:hover {
