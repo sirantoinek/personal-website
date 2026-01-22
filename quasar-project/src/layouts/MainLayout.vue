@@ -18,6 +18,7 @@
     margin-right: 2%;
     padding-left: 2rem;
     padding-right: 2rem;
+    transition: 150ms;
 	}
 
   @media (min-width: 600px) {

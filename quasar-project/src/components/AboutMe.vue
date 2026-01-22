@@ -10,15 +10,20 @@
       <span>Kevin Sirantoine</span>
     </h1>
     <span class="desc">
-      <p class="desc-text">A software developer and computer enthusiast passionate about building practical and efficient applications. 
-        <br>I enjoy exploring new technologies, solving problems, and finding creative solutions. 
-        <br>When I'm not coding, I'm usually tinkering with computers or enjoying the outdoors.
-      </p>
+      <span>
+        <p class="desc-text">
+          A software developer and computer enthusiast passionate about building practical and efficient applications.
+        </p>
+        <p class="desc-text">
+          I enjoy exploring new technologies, solving problems, and finding creative solutions.
+        </p>
+        <p class="desc-text">
+          When I'm not coding, I'm usually tinkering with computers or enjoying the outdoors.
+        </p>
+      </span>
       <div class="photo-frame">
-        <div class="photos">
-          <img :src="profileImage1" alt="profile image 1" class="photo"/>
-          <img :src="profileImage2" alt="profile image 2" class="photo"/>
-        </div>
+        <img :src="profileImage1" alt="profile image 1" class="photo"/>
+        <img :src="profileImage2" alt="profile image 2" class="photo"/>
       </div>
     </span>
   </div>
@@ -45,30 +50,11 @@
   }
 
   .photo-frame {
-    width: 100%;
+    display: grid;
+    grid-template-areas: "stack";
     max-width: 200px;
     border-radius: .5rem;
-    height: auto;
     overflow: hidden;
-    flex-grow: 2;
-    transition: 150ms;
-  }
-
-  .photos {
-    display: flex;
-    width: 200%;
-    border-radius: .5rem;
-    height: auto;
-    flex-grow: 2;
-    transition: 150ms;
-    animation: switchPhotos 12.5s infinite ease;
-  }
-
-  .photo {
-    width: 100%;
-    border-radius: .5rem;
-    height: auto;
-    flex-grow: 2;
     transition: 150ms;
   }
 
@@ -76,39 +62,47 @@
     transform: scale(1.05);
   }
 
+  .photo {
+    width: 100%;
+    grid-area: stack;
+    animation: crossFadePhotos 15s infinite ease;
+  }
+
+  .photo:nth-child(2) {
+    animation-delay: -7.5s;
+  }
+
   .desc {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   .desc-text {
-    font-size: 18px;
-    margin-bottom: .5rem;
-    text-wrap-style: pretty;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    margin-bottom: 1rem;
+    max-width: 915px;
   }
 
-  @media (min-width: 900px) and (max-width: 1464px) {
+  @media (min-width: 730px) {
     .desc {
       flex-direction: row;
       flex-wrap: nowrap;
     }
+  }
 
-    .profile-image {
-      width: 50%;
-    }
-
-    .desc-text {
-      width: 50%;
+  @media (min-width: 1200px) {
+    .photo-frame {
+      max-width: 300px;
+      margin-left: 5rem;
     }
   }
 
-  @keyframes switchPhotos {
-  0%, 41% { transform: translateX(0); }
-  45% { transform: translateX(-50%); }
-  45%, 81% { transform: translateX(-50%); }
-  85% { transform: translateX(0); }
-  85%, 100% { transform: translateX(0); }
+  @keyframes crossFadePhotos {
+    0%, 40% { opacity: 1; }
+    45%, 80% { opacity: 0; }
+    85%, 100% { opacity: 1; }
   }
 </style>
