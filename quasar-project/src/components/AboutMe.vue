@@ -7,7 +7,16 @@
   <div class="aboutMe">
     <h1 class="title-text">
       <span>Hi I'm</span>
-      <span>Kevin Sirantoine</span>
+      <span>
+        <span 
+          v-for="(char, index) in 'Kevin Sirantoine'" 
+          :key="index"
+          :style="{ animationDelay: `${index * .1}s` }"
+          class="wave-char"
+        >
+          {{ char === ' ' ? '\u00A0' : char }} <!-- \u00A0 is a non-breaking space -->
+        </span>
+      </span>
     </h1>
     <span class="desc">
       <span>
@@ -49,6 +58,25 @@
     white-space: nowrap;
   }
 
+  .wave-char {
+    display: inline-block;
+    animation: waveText 2s ease-in-out infinite;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .desc-text {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    margin-bottom: 1rem;
+    max-width: 915px;
+  }
+
   .photo-frame {
     display: grid;
     grid-template-areas: "stack";
@@ -72,20 +100,6 @@
     animation-delay: -7.5s;
   }
 
-  .desc {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .desc-text {
-    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
-    margin-bottom: 1rem;
-    max-width: 915px;
-  }
-
   @media (min-width: 730px) {
     .desc {
       flex-direction: row;
@@ -98,6 +112,11 @@
       max-width: 300px;
       margin-left: 5rem;
     }
+  }
+
+  @keyframes waveText {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-.06em); }
   }
 
   @keyframes crossFadePhotos {
