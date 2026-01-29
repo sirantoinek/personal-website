@@ -6,7 +6,7 @@
 <template>
   <div class="aboutMe">
     <h1 class="title-text">
-      <span>Hi I'm</span>
+      <span>Hi, I'm</span>
       <span>
         <span 
           v-for="(char, index) in 'Kevin Sirantoine'" 
@@ -44,7 +44,8 @@
     flex-direction: column;
     justify-content: flex-start;
 		position: relative;
-    gap: 1rem;
+    margin-top: .75rem;
+    gap: 1.5rem;
 	}
 
   .title-text {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import NavBar from 'components/NavBar.vue';
   import AboutMe from 'components/AboutMe.vue';
+  import MyExperience from 'components/MyExperience.vue';
   import AppFooter from 'components/AppFooter.vue';
 </script>
 
@@ -8,6 +9,7 @@
   <main class="main">
     <NavBar/>
     <AboutMe/>
+    <MyExperience/>
     <AppFooter/>
   </main>
 </template>
