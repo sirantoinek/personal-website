@@ -16,7 +16,6 @@
 
 <style scoped>
 	.main {
-		height: 1500px;
     width: 90%;
     max-width: fit-content;
     justify-content: center;
