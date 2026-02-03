@@ -42,8 +42,34 @@
       </div>
       <div class="card" style="grid-area: card-4">
         <h3 class="subheader-text">Skills</h3>
-        <p class="card-text">C++, Java, Python, TypeScript, JavaScript, Electron.js, Node.js, Vue.js, JUnit, SQL, x64dbg, Ghidra, Git</p>
-        <p class="card-text">Computer Hardware/Software Troubleshooting, Computer Hardware Installation, Technical Support</p>
+        <ul class="card-text bullet-list">
+          <strong>Programming Languages</strong>
+          <li class="bullet-text">C++</li>
+          <li class="bullet-text">Java</li>
+          <li class="bullet-text">Python</li>
+          <li class="bullet-text">TypeScript && JavaScript</li>
+          <li class="bullet-text">HTML && CSS</li>
+        </ul>
+        <ul class="card-text bullet-list">
+          <strong>Frameworks</strong>
+          <li class="bullet-text">Vue.js</li>
+          <li class="bullet-text">Electron.js</li>
+          <li class="bullet-text">Quasar</li>
+          <li class="bullet-text">JUnit</li>
+        </ul>
+        <ul class="card-text bullet-list">
+          <strong>Tools & Others</strong>
+          <li class="bullet-text">Git</li>
+          <li class="bullet-text">SQLite</li>
+          <li class="bullet-text">PostgreSQL</li>
+        </ul>
+        <ul class="card-text bullet-list">
+          <strong>IT & Technical Support</strong>
+          <li class="bullet-text">Computer Hardware/Software Troubleshooting</li>
+          <li class="bullet-text">Computer Hardware Installation</li>
+          <li class="bullet-text">TeamViewer</li>
+          <li class="bullet-text">Windows, Linux, Android</li>
+        </ul>
       </div>
     </div>
   </div>
