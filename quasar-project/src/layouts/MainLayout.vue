@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import NavBar from 'components/NavBar.vue';
-  import AboutMe from 'components/AboutMe.vue';
-  import MyExperience from 'components/MyExperience.vue';
+  import AboutMe from 'src/views/AboutMe.vue';
+  import MyExperience from 'src/views/MyExperience.vue';
   import AppFooter from 'components/AppFooter.vue';
 </script>
 
