@@ -2,15 +2,17 @@
   import NavBar from 'components/NavBar.vue';
   import AboutMe from 'src/views/AboutMe.vue';
   import MyExperience from 'src/views/MyExperience.vue';
+  import MyProjects from 'src/views/MyProjects.vue';
   import AppFooter from 'components/AppFooter.vue';
 </script>
 
 <template>
   <main class="main">
-    <NavBar/>
-    <AboutMe/>
-    <MyExperience/>
-    <AppFooter/>
+    <NavBar />
+    <AboutMe />
+    <MyExperience />
+    <MyProjects />
+    <AppFooter />
   </main>
 </template>
 
