@@ -17,8 +17,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15rem;
-    padding-bottom: 5rem;
+    padding-top: clamp(7.5rem, 10vw, 10rem);
+    padding-bottom: 2.5rem;
     gap: 0.5rem;
   }
 
@@ -30,5 +30,10 @@
   .footer-photo {
     width: 50px;
     height: 50px;
+    transition: 150ms ease;
+  }
+
+  .footer-photo:hover {
+    transform: scale(1.1);
   }
 </style>

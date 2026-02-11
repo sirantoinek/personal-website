@@ -28,7 +28,7 @@
 <style lang="scss">
 	.navbar {
     display: flex;
-    justify-content: left;
+    pointer-events: none;
 		position: sticky;
     z-index: 1;
   	top: 20px;
@@ -43,6 +43,7 @@
 
   .navbar__items {
     display: flex;
+    pointer-events: auto;
     padding: .25rem;
     background-color: $lm_background;
     backdrop-filter: blur(5px);

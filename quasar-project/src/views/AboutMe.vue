@@ -84,7 +84,7 @@
     max-width: 200px;
     border-radius: .5rem;
     overflow: hidden;
-    transition: 150ms;
+    transition: 150ms ease;
   }
 
   .photo-frame:hover {
