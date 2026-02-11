@@ -6,8 +6,8 @@
 <template>
   <div class="myExperience">
     <h2 class="header-text">My Background</h2>
-    <div class="info-cards">
-      <InfoCard title="Education" class="card-text" style="grid-area: card-1">
+    <div class="exp-info-cards">
+      <InfoCard title="Education" style="grid-area: card-1">
         <p>
           <strong>University of Florida</strong>
           <br>Bachelor of Science in Computer&nbsp;Science <!-- &nbsp; is a non-breaking space -->
@@ -32,7 +32,9 @@
       </InfoCard>
       <InfoCard title="Certifications" style="grid-area: card-3">
         <p>
-          <strong>CompTIA A+</strong>
+          <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/E901Y92MZH4Q1YS5" class="link-text" target="_blank">
+            <strong>CompTIA A+</strong>
+          </a>
           <br>(Exp. 07/31/2028)
         </p>
       </InfoCard>
@@ -74,10 +76,7 @@
 
 <style lang="scss">
   .myExperience {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-	  position: relative;
+    display: grid;
     gap: 2rem;
     margin-top: 5rem;
   }
@@ -90,30 +89,34 @@
     white-space: nowrap;
   }
 
-  .info-cards {
+  .exp-info-cards {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-rows: auto;
     gap: clamp(1rem, 2vw, 2rem);
     grid-template-areas: 
-    "card-1 card-3"
-    "card-2 card-2"
-    "card-4 card-4";
+      "card-1 card-3"
+      "card-2 card-2"
+      "card-4 card-4";
   }
 
   @media (max-width: 600px) {
-    .info-cards {
+    .exp-info-cards {
       grid-template-areas: 
-      "card-1"
-      "card-2"
-      "card-3"
-      "card-4";
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4";
     }
   }
 
   @media (max-width: 730px) {
     .myExperience {
       margin-top: 2.5rem;
+    }
+
+    .exp-info-cards {
+      grid-auto-columns: 1fr;
     }
   }
 
@@ -123,12 +126,12 @@
       transition: 150ms;
     }
 
-    .info-cards {
+    .exp-info-cards {
       grid-template-columns: fit-content(200px) 1fr;
       grid-template-areas: 
-      "card-1 card-2 card-2"
-      "card-3 card-2 card-2"
-      "card-4 card-4 card-4";
+        "card-1 card-2 card-2"
+        "card-3 card-2 card-2"
+        "card-4 card-4 card-4";
     }
   }
 </style>

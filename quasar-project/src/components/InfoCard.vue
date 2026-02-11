@@ -1,10 +1,17 @@
 <script setup lang="ts">
-  defineProps (['title']);
+  defineProps (['title', 'url']);
 </script>
 
 <template>
   <div class="info-card">
-    <h3 class="info-card-header">{{ title }}</h3>
+    <h3 class="info-card-header">
+      <a v-if="url" :href="url" class="link-text" target="_blank">
+        {{ title }}
+      </a>
+      <template v-else>
+        {{ title }}
+      </template>
+    </h3>
     <slot />
   </div>
 </template>

@@ -7,14 +7,14 @@
   <div class="myProjects">
     <h2 class="header-text">My Projects</h2>
     <div class="proj-info-cards">
-      <InfoCard title="Personal Website" style="grid-area: card-1">
+      <InfoCard title="Personal Website" url="https://github.com/sirantoinek/personal-website" style="grid-area: card-1">
         <BulletList>
           <li>This website right here! Built with TypeScript, HTML, CSS, Quasar, and Vue.js.</li>
           <li>Designed with responsiveness and fluidity in mind for an optimal experience across all device form factors.</li>
           <li>Utilizes Vue.js components with slots and props to ensure modularity and styling consistency across views.</li>
         </BulletList>
       </InfoCard>
-      <InfoCard title="Open Organizer" style="grid-area: card-2">
+      <InfoCard title="Open Organizer" url="https://github.com/sirantoinek/OpenOrganizer" style="grid-area: card-2">
         <BulletList>
           <li>A cross-platform desktop reminder and note-taking calendar application built with user control, complete data ownership, and security as core principles with opt-in cloud sync functionality.</li>
           <li>Utilizes a custom security framework featuring full data encryption keeping the server blind to user data.</li>
@@ -22,14 +22,14 @@
           <li>Built with TypeScript, Quasar, Electron, SQLite, Golang, and PostgreSQL.</li>
         </BulletList>
       </InfoCard>
-      <InfoCard title="Auto File Organizer" style="grid-area: card-3">
+      <InfoCard title="Auto File Organizer" url="https://github.com/sirantoinek/auto-file-organizer" style="grid-area: card-3">
         <BulletList>
           <li>CLI tool that sorts files into a structured directory by type and/or last modified date.</li>
           <li>Supports recursive and top-level only organization, manual runs, auto scheduling, and undo of last operation.</li>
           <li>Built with Java 21, Maven, Apache Commons IO, and JUnit 5; strengthened testing, and file system skills.</li>
         </BulletList>
       </InfoCard>
-      <InfoCard title="CT Property Trends" style="grid-area: card-4">
+      <InfoCard title="CT Property Trends" url="https://github.com/sirantoinek/CT-Property-Trends" style="grid-area: card-4">
         <BulletList>
           <li>Full stack application built with JavaScript/React, Leaflet.js, and Oracle DB for Database Systems course.</li>
           <li>Integrated over 1 million real Connecticut property sales records alongside CTDOT geoJSON data to be used in interactive geographic analysis.</li>
