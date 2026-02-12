@@ -4,7 +4,7 @@
 
 <template>
   <div class="info-card">
-    <h3 class="info-card-header">
+    <h3 v-if="title" class="info-card-header">
       <a v-if="url" :href="url" class="link-text" target="_blank">
         {{ title }}
       </a>

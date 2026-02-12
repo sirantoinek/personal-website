@@ -5,7 +5,7 @@
 
 <template>
   <div class="myProjects">
-    <h2 class="header-text">My Projects</h2>
+    <h2 class="header-text">What I've Built</h2>
     <div class="proj-info-cards">
       <InfoCard title="Personal Website" url="https://github.com/sirantoinek/personal-website" style="grid-area: card-1">
         <BulletList>

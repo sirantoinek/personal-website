@@ -3,6 +3,7 @@
   import AboutMe from 'src/views/AboutMe.vue';
   import MyExperience from 'src/views/MyExperience.vue';
   import MyProjects from 'src/views/MyProjects.vue';
+  import ContactMe from 'src/views/ContactMe.vue';
   import AppFooter from 'components/AppFooter.vue';
 </script>
 
@@ -12,6 +13,7 @@
     <AboutMe />
     <MyExperience />
     <MyProjects />
+    <ContactMe />
     <AppFooter />
   </main>
 </template>
@@ -19,7 +21,7 @@
 <style scoped>
 	.main {
     width: 90%;
-    max-width: fit-content;
+    max-width: 1500px;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
