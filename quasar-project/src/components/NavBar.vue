@@ -12,15 +12,16 @@
 <template>
   <nav class="navbar">
     <div class="navbar__items">
-      <a 
+      <router-link 
         v-for="item in navbarItems"
         :key="item"
         class="navbar__item"
         :class="{ active: activeItem === item }"
         @click="toggleColor(item)"
+        :to="'#' + item"
       >
         {{ item }}
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -55,13 +56,14 @@
 
   .navbar__item {
     color: $lm_dim;
+    text-decoration: none;
     padding: .25rem .5rem;
     border-radius: .25rem;
     transition: background-color 150ms ease-out;
   }
 
   .navbar__item.active {
-    color: revert;
+    color: inherit;
   }
 
   .navbar__item:hover {

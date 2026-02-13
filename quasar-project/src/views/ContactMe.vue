@@ -10,7 +10,7 @@
     <div class="contact-card">
       <InfoCard>
         <div class="contact-details">
-          <a href="https://www.linkedin.com/in/sirantoinek/" target="_blank" class="link-image">
+          <a href="https://www.linkedin.com/in/sirantoinek" target="_blank" class="link-image">
             <img :src="linkedin_icon" alt="LinkedIn logo" class>
           </a>
           <a href="https://github.com/sirantoinek" target="_blank" class="link-image" style="border-radius: 50%; overflow: hidden;">

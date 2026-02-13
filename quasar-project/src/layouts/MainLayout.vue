@@ -10,10 +10,10 @@
 <template>
   <main class="main">
     <NavBar />
-    <AboutMe />
-    <MyExperience />
-    <MyProjects />
-    <ContactMe />
+    <AboutMe id="about" />
+    <MyExperience id="experience" />
+    <MyProjects id="projects" />
+    <ContactMe id="contact" />
     <AppFooter />
   </main>
 </template>
