@@ -1,12 +1,62 @@
 <script setup lang="ts">
-  import { ref } from "vue";
+  import { ref, onMounted } from "vue";
 
   const activeItem = ref("about");
   const navbarItems = ["about", "experience", "projects", "contact"];
+  
+  let isClickScroll = false; // while true, locks activeItem from updating
 
-  const toggleColor = (itemName: string) => {
+  const toggleItemColor = (itemName: string) => {
     activeItem.value = itemName;
+    
+    isClickScroll = true;
+    setTimeout(() => { // after 250ms, set flag back to false
+      isClickScroll = false;
+    }, 250);
   };
+
+  onMounted(() => {
+    const lastId = navbarItems[navbarItems.length - 1];
+    const secondToLastId = navbarItems[navbarItems.length - 2];
+    if (!lastId || !secondToLastId) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-15% 0px -80% 0px",
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (isClickScroll) return; // if flag is true, do not update activeItem
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && activeItem.value !== lastId) { // does not override lastId if it is currently the active item
+          activeItem.value = entry.target.id;
+        }
+      });
+    }, observerOptions);
+    
+    const lastElement = document.getElementById(lastId);
+    if (lastElement) {
+      const bottomObserver = new IntersectionObserver((entries) => { // handles last element which may not reach the observed area
+        if (isClickScroll) return; // if flag is true, do not update activeItem
+
+        if (entries[0]?.isIntersecting) {
+          activeItem.value = lastId;
+        } 
+        else {
+          activeItem.value = secondToLastId;
+        }
+      }, { threshold: 0.3 }); // activate when entry is at least 30% visible
+
+      bottomObserver.observe(lastElement);
+    }
+
+    navbarItems.forEach((id) => {
+      const item = document.getElementById(id);
+      if (item) observer.observe(item);
+    });
+  });
 </script>
 
 <template>
@@ -17,7 +67,7 @@
         :key="item"
         class="navbar__item"
         :class="{ active: activeItem === item }"
-        @click="toggleColor(item)"
+        @click="toggleItemColor(item)"
         :to="'#' + item"
       >
         {{ item }}
@@ -70,5 +120,4 @@
     background-color: $lm_border;
     transition: background-color 0s;
   }
-
 </style>
