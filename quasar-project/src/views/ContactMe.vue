@@ -51,7 +51,7 @@
   .link-image {
     display: flex;
     width: clamp(6.4rem, 15vw, 20rem);
-    aspect-ratio: 1;
+    height: clamp(6.4rem, 15vw, 20rem);
     transition: 150ms ease;
   }
 
